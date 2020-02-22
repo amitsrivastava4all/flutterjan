@@ -1,0 +1,35 @@
+DocumentReference ref = await databaseReference.collection(“emps”)
+      .add({
+        ‘name’: ‘Brain Mentors’,
+        ‘job’: ’Training’
+      });
+  print(ref.documentID);
+
+
+Read the Data from FireStore
+databaseReference
+      .collection(“emps”)
+      .getDocuments()
+      .then((QuerySnapshot snapshot) {
+    snapshot.documents.forEach((f) => print('${f.data}}'));
+  });
+
+Update Data
+try {
+    databaseReference
+        .collection(‘emps’)
+        .document('1')
+        .updateData({‘name’: ‘Java’});
+  } catch (e) {
+    print(e.toString());
+  }
+
+Delete Data
+try {
+    databaseReference
+        .collection(‘emps’)
+        .document('1')
+        .delete();
+  } catch (e) {
+    print(e.toString());
+  }
