@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 
-import './rotation_transition.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Aniamtions',
-      home: RotationTransitionDemo(),
-    );
-  }
-}
+import './screens/register.dart';
+import './questions.dart';
+void main() => runApp(MaterialApp(
+    title: 'Integeration',
+    //home: SliverAppBarDemo()
+    //home: CameraDemo()
+    home:Questions()
+    //home: RegisterDemo()
+    //home: Login(),
+    ));
